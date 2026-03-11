@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Mariah Store | Momentos Especiais</title>
+    <meta name="description" content="Na Mariah Store, mais do que produtos, criamos momentos especiais. Acesse nossas redes sociais, avalie nossa loja e confira nossas novidades.">
+    <meta name="keywords" content="Mariah Store, loja de presentes, produtos exclusivos, linktree">
+    <meta name="robots" content="index, follow"> <meta name="author" content="Mariah Store">
+
+    <meta property="og:title" content="Mariah Store | Links Oficiais">
+    <meta property="og:description" content="Mais do que produtos, criamos momentos especiais.">
+    <meta property="og:image" content="./image/logo.jpg"> 
+    <meta property="og:url" content="URL_DO_SEU_SITE_AQUI">
+    <meta property="og:type" content="website">
+
+    <link rel="shortcut icon" href="./image/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+    <main class="linktree-container">
+        
+        <header class="story-ring">
+            <img src="./image/logo.jpg" alt="Logotipo da loja Mariah Store" class="profile-pic">
+        </header>
+        
+        <h1 id="texto_principal">Mais do que produtos, criamos momentos especiais.</h1>
+
+        <section class="content-row">
+            
+            <nav class="links-column" aria-label="Links para redes sociais">
+                <a href="https://l.instagram.com/?u=https%3A%2F%2Fapi.whatsapp.com%2Fsend%3Fphone%3D5579998844202%26text%3DOl%25C3%25A1%252C%2Bvi%2Bum%2Bproduto%2Bno%2BInstagram%2Bda%2Bloja%2Be%2Bgostaria%2Bde%2Bmais%2Binforma%25C3%25A7%25C3%25B5es%2521%2521%26utm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn5wELHW5XMIJDqyhpkLcPAcNvLG4jFUMUVKQD41SXxlPq6V-D66IjiDRWt7Y_aem_QTlgMrvcFeiuTpYulN19Vw&e=AT77tqa5jwmQWvMG60DqexnjhrxRfLKhnYGM4PuBw961tmPQM6RjdTuIU1hibeULBCWsZ1lRbEb0rK3xdDy3IcavGCE23924XSHL1GM0Kw" target="_blank" class="social-link" rel="noopener noreferrer">
+                    <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> WhatsApp
+                </a>
+                
+                <a href="https://www.instagram.com/mariah_presentes_papelaria?igsh=MWdxY3Qxcjh6anZ2NA%3D%3D" target="_blank" class="social-link" rel="noopener noreferrer">
+                    <i class="fa-brands fa-instagram" style="color: #E1306C;"></i> Instagram
+                </a>
+
+                <a href="URL_DO_GOOGLE_MEU_NEGOCIO" target="_blank" class="social-link" rel="noopener noreferrer">
+                    <i class="fa-brands fa-google"></i>
+            Avalie no Google
+                </a>
+            </nav>
+
+            <aside class="phone-mockup">
+                <div class="phone-notch"></div>
+                <!-- imagem inicial -->
+    <img 
+    src="./image/capa.jpg" 
+    class="video-poster"
+    id="posterVideo"
+    alt="Produtos da Mariah Store">
+
+    <!-- vídeo -->
+    <video 
+    id="meuVideo"
+    class="phone-video"
+    loop
+    muted
+    playsinline
+    webkit-playsinline
+    preload="metadata">
+
+        <source src="./image/produtos.mp4" type="video/mp4">
+
+    </video>
+            </aside>
+
+        </section>
+
+    </main>
+
+    <script>
+
+const video = document.getElementById("meuVideo");
+const poster = document.getElementById("posterVideo");
+
+video.muted = true;
+video.defaultMuted = true;
+
+video.addEventListener("canplay", () => {
+
+    video.play();
+
+    video.style.opacity = "1";
+    poster.style.display = "none";
+
+});
+
+</script>
+
+</body>
+</html>

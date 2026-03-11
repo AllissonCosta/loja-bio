@@ -1,0 +1,201 @@
+        @import url('https://fonts.googleapis.com/css2?family=Dynalight&display=swap');
+
+        :root {
+            /* Paleta minimalista e escura */
+            --btn-bg: rgba(255, 255, 255, 0.08);
+            --btn-border: rgba(255, 255, 255, 0.15);
+            --btn-text: #ffffff;
+            --btn-hover: rgba(255, 255, 255, 0.15);
+            --phone-border: #2a2a2a; 
+            --accent-color: #f09433; /* Cor base para ícones de destaque */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #050505;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Container Principal com Imagem de Fundo Escurecida */
+        .linktree-container {
+            width: 100%;
+            max-width: 420px;
+            min-height: 100vh;
+            /* O gradiente abaixo escurece a imagem. Substitua a URL pela sua foto */
+            background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.85), rgba(0, 0, 0, 0.98)), 
+                              url('../image/fundo.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden; /* Fundamental para cortar o celular na lateral */
+        }
+
+        /* Borda estilo Story do Instagram */
+        .story-ring {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #111; /* Borda escura para separar do anel */
+            object-fit: cover;
+        }
+
+
+        #texto_principal {
+            font-family: "Dynalight", cursive;
+            font-weight: 400;
+            font-style: normal;
+            color: #fff;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        /* Botão Avalie no Google */
+        .cta-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 70%;
+            padding: 16px 0px;
+            background-color: #ffffff9c;
+            color: #2b2a2a;
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: bold;
+            border-radius: 12px;
+            margin-bottom: 2.5rem;
+            transition: transform 0.2s ease;
+            opacity: 0.9;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.02);
+            opacity: 1;
+        }
+
+        .fa-google {
+            color: #4285F4;
+        }
+
+        /* Linha que divide Links e Celular */
+        .content-row {
+            display: flex;
+            width: 100%;
+            position: relative;
+            align-items: center;
+            min-height: 400px; /* Garante espaço vertical para o celular */
+        }
+
+        /* Coluna dos Links (Lado Esquerdo) */
+        .links-column {
+            width: 58%; /* Ocupa um pouco mais da metade da tela */
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 2; /* Fica acima do celular caso sobreponha um pouco */
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+            padding: 14px 18px;
+            background-color: var(--btn-bg);
+            border: 1px solid var(--btn-border);
+            color: var(--btn-text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border-radius: 25px;
+            backdrop-filter: blur(5px); /* Efeito de vidro sutil */
+            transition: all 0.3s ease;
+        }
+
+        .social-link i {
+            font-size: 1.2rem;
+        }
+
+        .social-link:hover {
+            background-color: var(--btn-hover);
+            transform: translateX(5px); /* Animação sutil para a direita */
+        }
+
+        /* Mockup do Celular cortado (Lado Direito) */
+        .phone-mockup {
+            position: absolute;
+            right: -80px; /* Move o celular para a direita, cortando a metade */
+            top: 5%;
+            transform: rotate(10deg);
+            width: 240px;
+            height: 480px;
+            border: 8px solid var(--phone-border);
+            border-radius: 35px;
+            background-color: #000;
+            box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.8);
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .phone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 20px;
+            background-color: var(--phone-border);
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            z-index: 10;
+        }
+
+        .video-poster{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:2;
+}
+
+.phone-video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:0;
+    transition:opacity .8s ease;
+}
+
+        /* Responsividade para telas muito pequenas */
+        @media (max-width: 360px) {
+            .links-column {
+                width: 65%; /* Dá mais espaço para os botões em telas menores */
+            }
+            .phone-mockup {
+                right: -150px; /* Esconde mais o celular se a tela for muito estreita */
+            }
+        }
